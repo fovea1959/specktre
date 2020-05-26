@@ -14,7 +14,7 @@ def draw_speckled_wallpaper(settings):
     squares = settings.generator(settings.width, settings.height)
     colors = random_color(settings.start_color, settings.end_color)
     for sq, color in zip(squares, colors):
-        ImageDraw.Draw(im).polygon(sq, fill=color)
+        ImageDraw.Draw(im).polygon(sq, fill=(color.red, color.green, color.blue))
 
     return im
 
